@@ -1,0 +1,428 @@
+/* Variables en css */
+:root {
+	--colorA1: #127ae3;
+	--colorA2: #fff;
+	--colorR1: #A91D25;
+	--colorS: #00A99D;
+	--fondo: #fff/*#e5e1e1*/;
+	--titulos: 33px;
+	--subtitulos: 20px;
+	--espacios: 10px;
+	--espacios-contenido: 45px;
+	--margenes: 60px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	background: var(--fondo);
+}
+
+/*-----------------------------------------------*/
+/*-----------------------------*/
+/*Titulos y subtitulos         */
+/*-----------------------------*/
+.titulo {
+	font-size: var(--titulos);
+	color: var(--colorA1);
+	margin-bottom: var(--espacios);
+
+}
+
+.subtitulo {
+	font-size: var(--subtitulos);
+	font-weight: 300;
+	color: var(--colorS);
+}
+
+.after::after {
+	/* Agrega una caja en este caso despues de el parrafo que definimos con el nombre after  */
+	content: '';
+	display: block;
+	margin: auto;
+	margin-top: var(--espacios);
+	width: 100px;
+	height: 2px;
+	background: var(--colorS);
+	margin-bottom: var(--espacios-contenido);
+}
+
+/*-----------------------------------------------*/
+/*-----------------------------*/
+/*Vista principal              */
+/*-----------------------------*/
+
+/*-----------------------------*/
+/*Header                       */
+/*-----------------------------*/
+header {
+	width: 100%;
+	height: 790px;
+	background-image: url(fondo.jpg);
+	background-attachment: fixed;
+	background-position: center;
+	background-size: contain;
+}
+
+/*-----------------------------*/
+/*Menu                         */
+/*-----------------------------*/
+nav {
+	width: 100%;
+	position: fixed;
+	/* Menu pegajoso */
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
+}
+
+.nav1 {
+	background: transparent;
+	height: 80px;
+	color: var(--colorA1);
+}
+
+.nav2 {
+	background: var(--colorA2);
+	height: 80px;
+	color: var(--colorA1);
+}
+
+.contenedor-nav {
+	display: flex;
+	margin: auto;
+	width: 90%;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1000px;
+	height: inherit;
+}
+
+nav .enlaces a {
+	display: inline-block;
+	padding: 10px 0;
+	margin-right: 40px;
+	font-size: 19px;
+	text-decoration: none;
+	border-bottom: 3px solid transparent;
+	color: inherit;
+	font-weight: bold;
+	/* Que herede automaticamente de su padre */
+}
+
+nav .enlaces a:hover {
+	border-bottom: 3px solid #1498a4;
+	transition: 0.6s;
+}
+
+.logo,
+.logo img {
+	height: 60px;
+}
+
+.icono {
+	display: none;
+	font-size: 24px;
+	padding: 23.5px 20px;
+	cursor: pointer;
+}
+
+/*-----------------------------*/
+/*Nombre y eslogan             */
+/*-----------------------------*/
+.textos {
+	width: 100%;
+	height: 60%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	overflow: hidden;
+	text-align: center;
+}
+
+.textos > h1 {
+	font-size: 70px;
+	color: var(--colorA1);
+}
+
+.textos > h2 {
+	font-size: 50px;
+	color: var(--colorR1);
+}
+
+.textos > h3 {
+	font-size: 30px;
+}
+
+/*-----------------------------*/
+/*Nuestros servicios           */
+/*-----------------------------*/
+.contenedor {
+	margin: auto;
+	/* Centrar todo ese contenido */
+	padding: var(--espacios-contenido) 0;
+	width: 90%;
+	max-width: 1000px;
+	text-align: center;
+	overflow: hidden;
+}
+
+.botones-work {
+	overflow: hidden;
+}
+
+.botones-work li {
+	display: inline-block;
+	text-align: center;
+	margin-left: var(--espacios);
+	margin-bottom: var(--espacios-contenido);
+	padding: 6px 12px;
+	border: 1px solid var(--colorS);
+	list-style: none;
+	color: var(--colorA1);
+}
+
+.botones-work li:hover {
+	background: var(--colorA1);
+	color: #fff;
+	cursor: pointer;
+}
+
+.botones-work .active {
+	background: var(--colorA1);
+	color: #fff;
+}
+
+.galeria-work {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+
+.galeria-work .cont-work {
+	width: 90%;
+	box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+	height: 450px;
+	overflow: hidden;
+	margin-bottom: var(--espacios-contenido);
+}
+
+.img-work {
+	height: 100%;
+	width: 84%;
+}
+
+.img-work img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	object-position: center center;
+}
+
+/*-----------------------------*/
+/*Acerca de                    */
+/*-----------------------------*/
+.img-about {
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
+	object-position: center;
+}
+
+.titulo span {
+	color: var(--colorR1);
+}
+
+.mision {
+	font-size: 20px;
+	text-align: justify;
+	margin-bottom: var(--espacios-contenido);
+}
+
+.cualidades {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	/* Por si se hace mas grande y las imagenes no caben para que no se junte todo que se vaya bajando */
+}
+
+.caja-cualidades {
+	width: 31%;
+	overflow: hidden;
+	height: 400px;
+}
+
+.cualidad {
+	height: 70%;
+}
+
+.cualidad img {
+	width: 100%;
+	height: 90%;
+	object-fit: contain;
+	object-position: center;
+}
+
+.title-cualidad {
+	font-size: 25px;
+	color: var(--colorS);
+	margin-bottom: var(--espacios);
+}
+
+.caja-cualidades > p {
+	font-size: var(--subtitulos);
+}
+
+/* ----------------------------*/
+/* Footer                      */
+/* ----------------------------*/
+/*-----------------------------*/
+/*Contacto                     */
+/*-----------------------------*/
+
+/*Telefonos y direccion */
+.cont-about{
+	display: flex;
+	justify-content: center;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.cont-about .imagen{
+	height: 48%;
+	width: 48%;
+}
+
+.imagen img{
+	height: 100%;
+	width: 120%;
+}
+
+.cont-about .info-contacto{
+	width: 50%;
+	height: 50%;
+	text-align: left;
+	margin: auto;
+}
+
+.info-contacto >h2{
+	font-size: 40px;
+	color: var(--colorA1);
+	margin-bottom: var(--espacios);
+}
+
+.info-contacto >h3{
+	font-size: 20px;
+	margin-bottom: var(--espacios);
+}
+
+
+.tel-dir span{
+	font-size: 20px;
+	margin-left: 17px;
+}
+
+.tel-dir i{
+	width: 10%;
+	/* Alinear al centro con el texto */
+	vertical-align: middle;
+	color: #3b5998;
+	margin-bottom: var(--espacios);
+}
+
+.tel-dir .fa-whatsapp-square{
+	font-size: 55px;
+	color: #00bb2d;
+}
+
+.tel-dir .fa-map-marker-alt{
+	font-size: 40px;
+	color: #830202;
+	text-align: center;
+}
+
+
+/* Acomodar las redes sociales para que se vean mas grandes y en medio */
+.footer .redes-sociales {
+	/* Centrar con flexbox */
+	display: flex;
+	justify-content: center;
+	/* Centrar todos los elementos */
+	margin: 0;
+	font-size: 50px;
+}
+
+/*Editar cada uno de los iconos */
+.footer .redes-sociales a {
+	display: flex;
+	/* Para modificar el ancho del enlaces*/
+	width: 100px;
+	height: 100px;
+	background: #fff;
+	color: #30313A;
+	text-decoration: none;
+	align-items: center;
+	/* Centrar el contenido */
+	justify-content: center;
+	border-radius: 100px;
+	/* Redondear el cuadrado */
+	margin: 0 20px;
+	/* Separacion entre iconos */
+}
+
+/* cambiar el color del icono */
+.footer .facebook i {
+	color: #3b5998;
+}
+
+.footer .twitter i {
+	color: #1da1f2;
+}
+
+.footer .instagram i {
+	color: #c13584;
+}
+
+/*Cambiar el color de fondo cuando pasas sobre el icono */
+/* cambiar el color del icono */
+.footer .facebook:hover {
+	background: #3b5998;
+	color: #fff;
+}
+
+.footer .twitter:hover {
+	background: #1da1f2;
+}
+
+.footer .instagram:hover {
+	background: #c13584;
+}
+
+/* Cambiar el color del icono cuando pases sobre el icono */
+.footer .facebook:hover i {
+	color: #fff;
+}
+
+.footer .twitter:hover i {
+	color: #fff;
+}
+
+.footer .instagram:hover i {
+	color: #fff;
+}
+
+.footer >h2{
+	font-size: 40px;
+	color: var(--colorS);
+	margin-bottom: var(--espacios-contenido);
+}
+
+
+/*-----------------------------*/
+/*Responsive                   */
+/*-----------------------------*/
